@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous">
+        <title>Sign Up</title>
+        <style>
+        body {
+            background: url(https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .mainContainer {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex-container {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .getstarted-col {
+            background-image: url(https://images.pexels.com/photos/699466/pexels-photo-699466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+            background-position: center;
+            background-size: cover;
+            border-radius: 20px;
+        }
+
+        .getstarted-col .content:after {
+            background: rgb(12, 37, 68);
+            background: linear-gradient(90deg, rgba(12, 37, 68, 1) 0%, rgba(23, 53, 95, 1) 35%, rgba(26, 72, 111, 1) 100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.95;
+            content: '';
+            z-index: 0;
+            border-radius: 15px;
+        }
+
+        .content-icon img {
+            max-width: 200px;
+        }
+
+        .child-w-100>* {
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* BUTTONS */
+        .btn.btn-semitransparent {
+            background: #ffffff40;
+            color: #fff;
+        }
+
+        .signup-options-list button {
+            width: 100%;
+            transition: 0.2s background-color ease-in-out;
+        }
+
+        .signup-options-list button:hover {
+            background-color: #fffbe7;
+        }
+
+        /* colors */
+        .text-secondary2 {
+            color: #cdcdcd;
+        }
+
+        .icon-fb {
+            color: #3B5997;
+        }
+
+        .icon-google {
+            color: #F44242;
+        }
+
+        /* INPUTS */
+        .default-input {
+            width: 100%;
+            border: 1px solid #cccccc70;
+            background: #EBF3F5;
+            padding-right: 30px;
+        }
+
+        [error-notif] input {
+            background: #ffe9e9;
+            border: 1px solid #dc3545;
+        }
+
+        [success-notif] input {
+            background: #d9f7db;
+            border: 1px solid #198754;
+        }
+
+        .icon-feedback {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(0, -50%) scale(1.15);
+        }
+
+        .error-feedback {
+            display: none;
+        }
+
+        [error-notif] .error-feedback {
+            display: block;
+        }
+
+        .icon-feedback .icon {
+            display: none;
+        }
+
+        [error-notif] .fa-circle-exclamation {
+            display: block;
+        }
+
+        [success-notif] .fa-circle-check {
+            display: block;
+        }
+
+        .show-password {
+            position: absolute;
+            top: 50%;
+            right: -25px;
+            transform: translate(0, -50%) scale(1.25);
+            opacity: 0.45;
+            transition: 0.2s all ease-in-out;
+        }
+
+        .show-password:hover {
+            opacity: 1;
+        }
+
+        .show-password .icon {
+            display: none;
+        }
+
+        .show-password.show .fa-eye-slash.icon {
+            display: block;
+            cursor: pointer;
+        }
+
+        .show-password:not(.show) .fa-eye.icon {
+            display: block;
+            cursor: pointer;
+        }
+
+        .login-account.hide,
+        .signup-account.hide,
+        .forgot-account.hide {
+            display: none;
+        } 
+
+        .base-wrap {
+            background: #FFF;
+            display: flex;
+            border-radius: 20px;
+        }
+        .base-wrap {
+            background: #FFF;
+            display: flex;
+            border-radius: 20px;
+        }
+        .base-wrap .box-half {
+            max-width: 50%;
+            width: 100%;
+        }
+        .full-width {
+            max-width: 85%;
+            width: 100%;
+        }
+        .form-submit {
+            margin-top: 20px;
+        }
+        .flex-bay {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 991px) {
+            .base-wrap {
+                flex-direction: column;
+            }
+            .base-wrap .box-half {
+                max-width: 100%;
+            }
+        }
+    </style>
+    </head>
+    <body>
+        <div class="mainContainer">
+            <div class="container">
+                <div class="logiform-container py-4">
+                    <div class="base-wrap">
+                        <div class="column d-block p-3 p-md-4 p-lg-5 p getstarted-col box-half">
+                            <div class="d-flex gap-4 content p-3 px-md-4 py-md-5 px-lg-5 child-w-100 flex-wrap position-relative h-100 align-items-center">
+                                <div class="back-arrow position-relative">
+                                    <button class="btn btn-semitransparent rounded-pill py-0 px-4 py-lg-2 px-lg-5"><i class="fa-solid fa-arrow-right-long text-white"></i></button>
+                                </div>
+                                <div class="text-content position-relative">
+                                    <span class="text-secondary2">Hi Welcome!</span>
+                                    <h2 class="text-white">Let's Get Started</h2>
+                                    <p class="text-secondary2 mt-4">Create free account and get free access of full features for 7 days. We invite you to join us and get better experience.</p>
+                                </div>
+                                <div class="content-icon position-relative">
+                                    <img src="https://cdn.pixabay.com/photo/2016/06/15/16/16/man-1459246_1280.png" alt class="w-100" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column d-block p-3 d-flex align-items-center justify-content-center h-100 box-half">
+                            <div class="content full-width">
+                                <div class="form-wrapper py-4">
+                                    <div class="signup-account">
+                                        <h2 class="mb-4">Sign Up</h2>
+                                        <form>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="yourname" class="text-secondary">Your Name</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="yourName" id="yourName" maxlength="20" />
+                                                </div>
+                                            </div>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="youremail" class="text-secondary">Your Email</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="yourEmail" id="yourEmail" maxlength="40" />
+                                                </div>
+                                            </div>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="yourpassword" class="text-secondary">Password</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="password" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="yourPassword" id="yourPassword" maxlength="40" />
+                                                </div>
+                                            </div>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="confirmpassword" class="text-secondary">Confirm Password</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="password" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="confirmPassword" id="confirmPassword" maxlength="40" />
+                                                </div>
+                                            </div>
+                                            <div class="form-submit">
+                                                <button id="btnCreateAccount" type="button" class="btn btn-success w-100 rounded-pill py-lg-2 mt-1 mt-lg-2">
+                                                    Create Account
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="have-account-option mt-4">
+                                            <p>
+                                                Already have an account?
+                                                <a href="javscript:void(0)" id="loginaccount"> Login Here </a>
+                                            </p>
+                                        </div>
+                                    </div>
+    
+                                    <div class="login-account hide">
+                                        <h2 class="mb-4">Login</h2>
+                                        <form>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="youruseremail" class="text-secondary">Your Email</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="youruseremail" id="youruseremail" maxlength="40" />
+                                                </div>
+                                            </div>
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="yourloginpassword" class="text-secondary">Your Password</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="password" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="yourloginpassword" id="yourloginpassword" maxlength="40" />
+                                                </div>
+                                            </div>
+                                            <div class="form-check mb-3 p-0">
+                                                <input type="checkbox" name="rememberme" id="rememberMe" />
+                                                <label for="rememberMe">Remember me</label>
+                                            </div>
+                                            <div class="form-submit">
+                                                <button id="btnLoginAccount" type="button" class="btn btn-success w-100 rounded-pill py-lg-2 mt-1 mt-lg-2">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </form>
+                                        <div class="have-account-option mt-4 flex-bay">
+                                            <p>
+                                                Don't have an account?
+                                                <a href="javscript:void(0)" id="createaccount"> Create Account </a>
+                                            </p>
+                                            <p>
+                                                <a href="javscript:void(0)" id="forgotPassword"> Forgot Password? </a>
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="forgot-account hide">
+                                        <h2 class="mb-2">Forgot Password</h2>
+                                        <p class="mb-4">We will send you an email with instructions on how to reset your password.</p>
+                                        <form>  
+                                            <div class="form-input mb-3 p-0">
+                                                <label for="youruseremail" class="text-secondary">Your Email</label>
+                                                <div class="input-relative position-relative mt-1 mt-lg-2">
+                                                    <input type="text" class="default-input rounded-pill py-1 ps-3 py-lg-2 input-required" name="youruseremail" id="youruseremail" placeholder="name@example.com" required />
+                                                </div>
+                                            </div>
+                                            <div class="form-submit">
+                                                <button id="btnForgotAccount" type="button" class="btn btn-success w-100 rounded-pill py-lg-2 mt-1 mt-lg-2">
+                                                    Send Email
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- JQUERY CDN  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#loginaccount").click(function () {
+                    $(".signup-account").addClass("hide");
+                    $(".login-account.hide").removeClass("hide");
+                });
+                $("#createaccount").click(function () {
+                    $(".login-account").addClass("hide");
+                    $(".signup-account.hide").removeClass("hide");
+                });
+                $('#forgotPassword').click(function() {
+                    $('.signup-account').addClass('hide');
+                    $(".login-account").addClass("hide");
+                    $('.forgot-account.hide').removeClass('hide');
+                });
+            });
+        </script>
+    </body>    
+</html>
